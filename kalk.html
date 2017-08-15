@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META name=Description  content="Сайт компании Переезд-Быстро: офисный и квартирный переезд по Москве! Грузчики на переезд квартиры и офиса.">
+    <META name=Keywords  content="переезд, офисный переезд, квартирный переезд, переезд офиса, переезд квартиры, переезд по Москве">
+    <meta name='yandex-verification' content='5929f108de888808' />
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Список клиентов ООО "ПЕРЕЕЗД-БЫСТРО"</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style>
+.tblKalk{
+  float:left;
+  width:250px;
+}
+.tblKalkRight{
+  float:left;
+  margin-left: 20px;
+}
+.tblKalk {
+  border-style: solid;
+  border-width: 1px;
+  border-collapse: collapse;
+   
+  float: left;
+  border-color: silver;
+   
+}
+.tblKalk td{
+  padding: 4px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: silver;
+}
+.tblKalk th{
+  padding: 4px;
+  background-color: #464646;
+  color:white;
+}
+.tblKalkRight{
+  width:461px;
+  padding-left: 15px; 
+}
+.tblKalkRight td{
+  padding: 4px;
+}
+
+</style>
+  </head>
+  <body>
+  <div class="wrapper"> 
+  <header class="container">
+       <div class="row">
+         <div class="header-logo col-xs-7 col-sm-5 col-md-4 col-lg-4">
+            <img class="img-responsive" src="img/logotype.png" alt="">
+         </div>
+
+         <div class="hidden-xs hidden-sm col-md-3 col-lg-3">
+          <p id="year-2006">c 2006 года!</p>
+          <p id="site-span">www.pereezd-bystro.ru</p>
+        </div>
+
+         <div class="header-phones col-sm-7 col-md-5 col-lg-5">
+           <img src="img/phones.png" class="img-responsive" alt="">
+         </div>
+      
+       </div>
+     </header>
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <p class="visible-xs-block menu-label">Кнопка открытия меню >> </p>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Кнопка меню</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="visible-xs-block navbar-brand" href="index.html">www.pereezd-bystro.ru</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Главная</a></li>
+        <li><a href="pereezd-ofisa.html">Переезд офиса</a></li>
+        <li><a href="pereezd-kvartir.html">Переезд квартиры</a></li>
+        <li class="hidden-sm"><a href="dach-pereezd.html">Дачный переезд</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Другие услуги <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="visible-sm-block"><a href="dach-pereezd.html"></a></li>
+            <li><a href="sborka-mebeli.html">Сборка мебели</a></li>
+            <li><a href="perevozka-pianino.html">Перевозка пианино</a></li>
+            <li><a href="razgruzka-fur.html">Разгрузка фур</a></li>
+            
+            <li><a href="takelazh.html">Такелажные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="visible-sm-block"><a href="cena-pereezda.html">Цены</a></li>
+            <li><a href="recomendacii.html">Наши рекомендации</a></li>
+          </ul>
+        </li>
+        <li class="hidden-sm"><a href="cena-pereezda.html">Цены</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+ <!-- =========================================================== -->
+<main>
+<div class="container">
+<h1>Калькулятор цены переезда</h1>
+
+  <div class="wrapper-panels">
+  <ul id="panels">
+  <li><a href="#panel1">Офисный переезд</a></li>
+  <li><a href="#panel2">Квартирный переезд</a></li>
+  </ul>
+  <div class="paneli" id="panel1">
+    <form class="form1" name="form1" method="post" action="php/calcofis.php">
+        <div class="table-wrap clearfix">
+          <table width="280" class="tblKalk">
+            <thead>
+              <tr>
+                <th colspan="2">Наименование</th>
+                <th width="80">Кол-во шт.</th>
+              </tr>
+            </thead>
+            <tr>
+              <td width="69"><img src="imgkalk/stol.jpg"></td>
+              <td width="109">Стол</td>
+              <td><input name="stol" type="text" id="stol" value="0" size="3" /></td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/shkaf.jpg"></td>
+              <td>Шкаф</td>
+              <td><input name="shkaf" type="text" id="shkaf" value="0" size="3" /></td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/tumbochka.jpg"></td>
+              <td>Тумба</td>
+              <td><input name="tumbochka" type="text" id="tumbochka" value="0" size="3" /></td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/comp.jpg"></td>
+              <td>Компьютер</td>
+              <td><input name="comp" type="text" id="comp" value="0" size="3" /></td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/kreslo.jpg"></td>
+              <td>Стулья и кресла</td>
+              <td><input name="kreslo" type="text" id="kreslo" value="0" size="3" /></td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/divan.jpg"></td>
+              <td>Диван</td>
+              <td><input name="divan" type="text" id="divan" value="0" size="3" /></td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/reception.jpg"></td>
+              <td>Ресепшн</td>
+              <td><input name="reception" type="text" id="reception" value="0" size="3" /></td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/stellage.jpg"></td>
+              <td>Стеллаж</td>
+              <td><input name="stellage" type="text" id="stellage" value="0" size="3" /></td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/koroba.jpg"></td>
+              <td>Коробки</td>
+              <td><input name="koroba" type="text" id="koroba" value="0" size="3" /></td>
+            </tr>
+          </table>   
+          
+          
+          <table width="506" class="tblKalkRight">
+            <tr>
+              <td colspan="3" ><strong>Адрес загрузки</strong>:</td>
+            </tr>
+            <tr>
+              <td colspan="3" ><input name="lift1" type="checkbox" id="lift1" checked="checked" />
+              
+                Наличие лифта, этаж: 
+                <input name="etagi1" type="text" id="etagi1" value="1" size="5" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3"><strong>Адрес разгрузки</strong>: </td>
+            </tr>
+            <tr>
+              <td colspan="3"><input name="lift2" type="checkbox" id="lift2" checked="checked" />
+              
+                Наличие лифта, этаж:
+                <input name="etagi2" type="text" id="etagi2" value="1" size="5" />
+              </td>
+            </tr>
+            
+            
+            <tr>
+              <td colspan="3">
+                <p><strong>Разборка и сборка мебели</strong></p>
+              </td>
+            </tr>
+            
+            <tr>
+              <td width="70"><img src="imgkalk/sborka.jpg"></td>
+              <td colspan="2"><input type="radio" name="sborka" value="1" /> Включить<br>
+              <input type="radio" name="sborka" value="0" checked /> Не нужна<br></td>
+            </tr>
+            <tr>
+              <td colspan="3"><strong>Упаковка мебели и оргтехники</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/upakovka.jpg"></td>
+              <td colspan="2"><input type="radio" name="upakovka" value="1" /> Включить<br>
+                <input type="radio" name="upakovka" value="0" checked /> Не нужна<br></td>
+            </tr>
+            
+            <tr>
+              <td colspan="3"><strong>Заказ упаковочных материалов:</strong>:</td>
+            </tr>
+            <tr> 
+              <td rowspan="2"><img src="imgkalk/koroba2.jpg" width="45" height="45" class="imgMal" /></td>
+              <td width="334"><p>Коробки 40x40x60 см (для документов)</p>
+                <p>&nbsp;</p>
+              </td>
+              <td><input name="korob4" type="text" id="korob4" value="0" size="5" />                шт.</td>
+            </tr>
+            <tr>
+              <td>Коробки 50x50x50 см (для компьютера) </td>
+              <td width="86"><input name="korob3" type="text" id="korob3" value="0" size="5" /> 
+              шт.</td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/plenka.jpg" align="left" /></td>
+              <td>Пленка воздушно- пузырчатая (п. метр)<br /></td>
+              <td><input name="plenka2" type="text" id="plenka2" value="0" size="5" />                м</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2"><br />
+                <input type="submit" name="okbutton1" id="okbutton1" value="Рассчитать стоимость перееезда " style="padding:2px" />
+              </td> 
+            </tr>
+  </table>           
+        </div>
+    </form>
+  </div><!-- конец panel1 -->
+  <div class="paneli" id="panel2">
+    <div class="table-wrap clearfix">
+      <form class="form1" name="form2" method="post" action="php/calckvartirnyi.php">
+        
+        <table class="tblKalk">
+          <thead>
+            <tr>
+              <th colspan="2">Наименование</th>
+              <th width="61">Кол-во шт.</th>
+              </tr>
+            </thead>
+          <tr>
+            <td width="62"><img src="imgkalk/shkaf.jpg"></td>
+            <td width="172">Шкаф прям.</td>
+            <td><input name="shkaf" type="text" id="shkaf" value="0" size="3" /></td>
+            </tr>
+          <tr>
+            <td><img src="imgkalk/shkafuglovoy.jpg"></td>
+            <td>Шкаф угловой</td>
+            <td><input name="shkafuglovoy" type="text" id="shkafuglovoy" value="0" size="3" /></td>
+            </tr>
+          <tr>
+            <td><img src="imgkalk/shkafkupe.jpg"></td>
+            <td>Шкаф-купэ</td>
+            <td><input name="shkafkupe" type="text" id="shkafkupe" value="0" size="3" /></td>
+            </tr>
+          <tr>
+            <td><img src="imgkalk/krovat.jpg"></td>
+            <td>Кровать</td>
+            <td><input name="krovat" type="text" id="krovat" value="0" size="3" /></td>
+            </tr>
+          <tr>
+            <td><img src="imgkalk/divan2.jpg"></td>
+            <td>Диван</td>
+            <td><input name="divan2" type="text" id="divan2" value="0" size="3" /></td>
+            </tr>
+          <tr>
+            <td><img src="imgkalk/stolpism.jpg"></td>
+            <td>Стол письменный</td>
+            <td><input name="stolpism" type="text" id="stolpism" value="0" size="3" /></td>
+            </tr>
+          <tr>
+            <td><img src="imgkalk/stolobed.jpg"></td>
+            <td>Стол обеденный</td>
+            <td><input name="stolobed" type="text" id="stolobed" value="0" size="3" /></td>
+            </tr>
+            <tr>
+              <td><img src="imgkalk/polka.jpg"></td>
+              <td>Полка навесная</td>
+              <td><input name="polka" type="text" id="polka" value="0" size="3" /></td>
+            </tr>
+          <tr>
+            <td><img src="imgkalk/tumbakuh.jpg"></td>
+            <td>Тумба кухонная</td>
+            <td><input name="tumbakuh" type="text" id="tumbakuh" value="0" size="3" /></td>
+            </tr>
+          <tr>
+            <td><img src="imgkalk/tumbochka2.jpg"></td>
+            <td>Тумбочка</td>
+            <td><input name="tumbochka2" type="text" id="tumbochka2" value="0" size="3" /></td>
+            </tr>
+          
+          </table>  
+        <table class="tblKalk">
+          <thead>
+            <tr>
+              <th colspan="2">Наименование</th>
+              <th width="69">Кол-во шт.</th>
+              </tr>
+            <tr>
+              <td width="70"><img src="imgkalk/komod.jpg"></td>
+              <td width="233">Комод</td>
+              <td><input name="komod" type="text" id="komod" value="0" size="3" /></td>
+              </tr>
+            <tr>
+              <td><img src="imgkalk/trumo.jpg"></td>
+              <td>Трюмо</td>
+              <td><input name="trumo" type="text" id="trumo" value="0" size="3" /></td>
+              </tr>
+            <tr>
+              <td><img src="imgkalk/stul.jpg"></td>
+              <td>Стул</td>
+              <td><input name="stul" type="text" id="stul" value="0" size="3" /></td>
+              </tr>
+            <tr>
+              <td><img src="imgkalk/kreslo2.jpg"></td>
+              <td>Кресло</td>
+              <td><input name="kreslo2" type="text" id="kreslo2" value="0" size="3" /></td>
+              </tr>
+            <tr>
+              <td><img src="imgkalk/prihozhaya.jpg"></td>
+              <td>Прихожая</td>
+              <td><input name="prihozhaya" type="text" id="prihozhaya" value="0" size="3" /></td>
+              </tr>
+            <tr>
+              <td><img src="imgkalk/holodilnik.jpg"></td>
+              <td>Холодильник</td>
+              <td><input name="holodilnik" type="text" id="holodilnik" value="0" size="3" /></td>
+              </tr>
+            <tr>
+              <td><img src="imgkalk/stiralnaya.jpg"></td>
+              <td>Стиральная машина</td>
+              <td><input name="stiralnaya" type="text" id="stiralnaya" value="0" size="3" /></td>
+              </tr>
+            <tr>
+              <td><img src="imgkalk/tv.jpg"></td>
+              <td>Телевизор</td>
+              <td><input name="tv" type="text" id="tv" value="0" size="3" /></td>
+              </tr>
+            <tr>
+              <td><img src="imgkalk/comp.jpg"></td>
+              <td>Компьютер</td>
+              <td><input name="comp" type="text" id="comp" value="0" size="3" /></td>
+              </tr>
+            <tr>
+              <td><img src="imgkalk/koroba2.jpg"></td>
+              <td>Коробки</td>
+              <td><input name="koroba2" type="text" id="koroba2" value="0" size="3" /></td>
+              </tr>
+            </thead>
+          
+          </table>      
+        <table class="tblKalkRight">
+          <tr>
+            <td ><strong>Адрес загрузки</strong>: </br><br />
+              <input name="lift1" type="checkbox" id="lift1" checked="checked" />
+              Наличие лифта, этаж: 
+              <input name="etagi1" type="text" id="etagi1" value="1" size="5" />
+              <br /><br />
+              <strong>Адрес разгрузки</strong>: </br><br />
+              <input name="lift2" type="checkbox" id="lift2" checked="checked" />
+              Наличие лифта, этаж:
+              <input name="etagi2" type="text" id="etagi2" value="1" size="5" />
+              </p><br />
+              <p><strong>Разборка и сборка мебели</strong></p>
+              <table>
+                <tr>
+                  <td><img src="imgkalk/sborka.jpg"></td>
+                  <td><input type="radio" name="sborka" value="1" /> Включить<br>
+                    <input type="radio" name="sborka" value="0" checked /> Не нужна<br></td>
+                  </tr>
+                </table>
+              
+              <p><strong>Упаковка мебели и оргтехники</strong></p>
+              <table>
+                <tr>
+                  <td><img src="imgkalk/upakovka.jpg"></td>
+                  <td><input type="radio" name="upakovka" value="1" /> Включить<br>
+                    <input type="radio" name="upakovka" value="0" checked /> Не нужна<br></td>
+                  </tr>
+                </table>
+              
+              <p><strong>Заказ упаковочных материалов:</strong>:<br />
+                </p>
+              <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                <tr>
+                  <td width="9%"><img src="imgkalk/koroba2.jpg" width="45" height="45" class="imgMal" /></td>
+                  <td width="91%"><p>Коробки 40x40x60 см (для документов)
+                    <input name="korob1" type="text" id="korob1" value="0" size="5" />
+                    шт.</p>
+                    <p> Коробки 50x50x50 см (для компьютера)
+                      <input name="korob2" type="text" id="korob2" value="0" size="5" />
+                    шт.</p></td>
+                  </tr>
+                </table>
+              <p><img src="imgkalk/plenka.jpg" align="left" />
+                <br />
+                Пленка воздушно- пузырчатая (п. метр)
+                <input name="plenka1" type="text" id="plenka1" value="0" size="5" />
+                м<br /><br />
+              </p></td> 
+            </tr>
+          <tr>
+            <td ><input type="submit" name="okbutton2" id="okbutton2" value="Расcчитать стоимость перееезда " style="padding:2px" /></td>
+            </tr>
+          </table>           
+      </form>
+    </div>
+  </div><!-- конец panel2 -->
+  <!--Конец Вкладки-->
+  </div><!--конец wrapper-panels-->
+ </div> 
+</main>
+
+ <!-- =========================================================== -->
+
+<div class="container">
+<h2>Как сделать заказ переезда и другой услуги?</h2>
+<p>Оценить и заказать услугу переезда можно, позвонив нашему диспетчеру или оставив заявку он-лайн.</p>
+</div> 
+<div class="streep">
+  <div class="container zakaz clearfix">
+    <div class="row">
+      <div class="col-sm-2">
+          <img src="img/dispetcher.png" width="130" height="130" alt="">
+      </div>
+      <div class="block col-xs-5 col-sm-4">
+          Вы можете оценить и <br> заказать переезд по телефонам:<br><span class="telshrift">(495) 648-41-27</span> <br>и <span class="telshrift">(495) 969-30-84</span>
+      </div>
+      <div class="block col-xs-5 col-sm-4">
+       Или заказать бесплатный<br> выезд оценщика,  нажав на кнопку:<br><a href="zakaz.html"><button class="btn btn-warning">ОТПРАВИТЬ ЗАЯВКУ</button></a>
+      </div>
+    </div> <!-- row -->     
+  </div>  <!-- container -->
+</div> <!-- streep -->
+<footer> 
+  <div  class="container">
+    <p >Компания ООО<strong> "Переезд быстро"</strong>, 2006.  
+      Заказ услуг: "<a href="pereezd-ofisa.html">офисный переезд</a>",
+      "<a href="pereezd-kvartir.html">квартирный переезд</a>",
+      "<a href="index.html">переезд по Москве</a>".
+      </p>
+  </div>
+</footer>
+
+<!-- javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+ <script type="text/javascript">
+$(document).ready(function(){
+  $('#panels a').click(function(){
+    $('.paneli').hide();
+    $('#panels a').removeClass('active');
+    $(this).addClass('active').blur();
+    var ankor=$(this).attr('href');
+    $(ankor).fadeIn(500).blur();
+    return false; 
+    });
+var url=location.href;
+if (url.indexOf("#panel2")!==-1){
+  $('#panels li:last a').click();
+  } 
+  else $('#panels li:first a').click();
+});
+</script>
+</div> <!-- wrapper -->
+  </body>
+</html>

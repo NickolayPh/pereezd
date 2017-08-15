@@ -1,0 +1,832 @@
+/* Making footers stick to the bottom of a page with CSS*/
+html{
+	height: 100%;
+}
+body{
+	min-height: 100%;
+	margin:0;
+	padding: 0 0 70px 0;
+	position: relative;
+	box-sizing: border-box;
+}
+footer{
+	background-color: #544747;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 70px;
+}
+/* 50px - height of footer */
+a{
+	color: brown;
+}
+.container{
+	min-width:580px;
+}
+.advantages .panel {
+	padding-left: 0;
+	padding-right: 0;
+	border-radius:0;
+	float: left;
+	width: 135px;
+	color: white;
+	border:1px solid darkgray;
+}
+.advantages .panel-footer{
+	background-color: #544747;
+	border-radius: 0;
+}
+.advantages .panel img  {
+	height: 70px;
+	text-align: center;
+}
+@media all and (max-width: 500px){
+	.advantages .split{
+		display: block;
+		clear: both;
+	}
+}
+
+.blago  .item a{
+	float: left;
+	 
+}
+
+#recomendacii img{
+	float: left;
+	margin: 5px;
+}
+#recomendacii .carousel-inner{
+	height: 165px;
+}
+.carousel-control-container{
+	position: relative;
+	font-size: 32px;
+	color: grey;
+	height: 150px;
+	vertical-align: middle;
+}
+.carousel-control-container span{
+	 position: absolute;
+	 top: 45%;
+}
+.bottom-qwest button{
+	margin: 10px;
+}
+.panels-wrapper{
+	margin-left: 15px;
+}
+.movings .panel-heading{
+	background:linear-gradient(#FEB418, #FC6D09);
+}
+.movings .panel-body img{
+	width: 100%;
+	margin-top: -1px;
+}
+.movings .panel-body> ul li:before {
+    content: "\2713";
+    color: darkorange;
+    font-weight: bold;
+    padding-right: 5px;
+}
+.movings .panel-body> ul {
+    margin: 10px;
+}
+.panel-body{
+	padding:0;
+	 
+}
+
+#logoshow{
+background: rgb(252,255,244); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(252,255,244,1) 0%, rgba(233,233,206,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(233,233,206,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(252,255,244,1) 0%,rgba(233,233,206,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#e9e9ce',GradientType=0 ); /* IE6-9 */
+// padding:4px;
+text-align:center;
+border: 1px dashed #E9E9CF;
+}
+#logoshow img{
+    margin:3px;  
+}
+.client-lists li:nth-child(n+2):before{
+	content:url(../img/spisok.png);
+	position: relative;
+	top:3px;
+}
+.client-lists a{
+	color:brown;
+}
+
+.movings .panel{
+	max-width: 300px;
+}
+.movings .panel-body{
+	min-height: 350px;
+	 
+}
+
+.form-short .input-group{
+			font-size: 1em;
+			font-weight: normal;
+			line-height: 1.75;
+}
+.form-short	.input-group input{
+	padding-left: 4px;
+
+}
+.form-short	input{
+	padding-left: 4px;
+	max-width: 300px;
+}
+.pic-otzyv{
+	padding: 3px;
+	border: 1px solid #D9DEE1;
+	margin: 3px;
+	background-color: #fff;
+}
+#short-submit{
+	margin: 0;
+	width: 220px;
+}
+
+.telshrift{
+	color: brown;
+	font-weight: bold;
+	font-size: 18px ;
+}
+.block{
+	margin: 10px;
+}
+.block .btn-warning{
+	margin: 10px;
+}
+.carousel-control-container a{
+	color: #6A3A29;
+}
+.dopolnenie li{
+	margin: 10px;
+}
+.dopolnenie>li>a{
+	color: #673400;
+}
+legend {
+  display: block;
+  width: auto;
+  padding: 0;
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: inherit;
+  border-bottom: none;
+}
+fieldset {
+  border: 1px dotted threedface;
+  padding: 0;
+  margin:0 0 5px 0;
+}
+fieldset.no-border {
+  border: 0;
+  padding: 0;
+  margin:0 0 5px 0;
+}
+input,label{
+	margin: 0;
+}
+/////////////////////////////////////////////////////////
+.h2{
+	font-size: 24px;
+	color: orange;
+	display: block;
+}
+.streep{
+	background: #F8EDDB;
+	background: linear-gradient(#FFF8E9, #EDDBC4);
+}
+
+/*HERO Контактная форма с картинкой вверху контентной части*/
+.hero p{
+	margin:3px 0;
+}
+.phones {
+  font-size: 24px;
+  color: #A52A2A;
+  font-weight: bold;
+  white-space: nowrap;
+  line-height: 28px;
+}
+.phones:before {
+  content: "☎";
+  color: black;
+  float: left;
+  padding-right: 5px;
+  display: block;
+  position: relative;
+  top: 5px;
+  line-height: 24px;
+  height: 45px;
+}
+.form-group{
+	margin: 2px 0;
+	padding:0;
+}
+input[type="text"]{
+	height: 30px;
+	font:14px;
+	padding-left: 3px;
+}
+.hero input[type="text"]{
+	width: 230px;
+}
+//////////////////////////////////////////
+@media screen and (max-width:660px){
+	.checkbox{
+	display: none;
+}
+}
+@media screen and (min-width:1100px){
+	 .h2{
+	 	font-size: 30px;
+	 }
+	.phones{
+		font-size: 26px;
+		line-height: 32px;
+	}
+
+	.form-group{
+	margin: 5px 0;
+	padding:0;
+}
+input[type="text"]{
+	 padding-top: 5px;	  
+}
+.hero input[type="text"]{
+	width: 290px;
+}
+}
+
+///////////////////////////////////////////
+.zakaz{
+	padding: 10px 0;
+}
+
+////////////////////
+.menu-label{
+	position: absolute;
+	color: white;
+	right: 70px;
+	top: 15px;
+	font-size: 16px;
+}
+////////////////////////
+.gazel{
+background: rgb(255,247,139); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,247,139,1) 0%, rgba(255,205,125,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,247,139,1) 0%,rgba(255,205,125,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,247,139,1) 0%,rgba(255,205,125,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff78b', endColorstr='#ffcd7d',GradientType=0 ); /* IE6-9 */
+    display:block;
+    text-align:center; 
+    font-size: 16px;
+}
+
+.gazel+p{
+	font-weight: bold;
+	background: transparent;
+	font-size: 14px;
+	text-align: left;
+}
+.economy{
+	font-size: 18px;
+}
+.pecati{
+background: rgb(244,235,205); /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: -moz-linear-gradient(top,  rgba(244,235,205,1) 0%, rgba(232,197,157,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,235,205,1)), color-stop(100%,rgba(232,197,157,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(244,235,205,1) 0%,rgba(232,197,157,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(244,235,205,1) 0%,rgba(232,197,157,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(244,235,205,1) 0%,rgba(232,197,157,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(244,235,205,1) 0%,rgba(232,197,157,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4ebcd', endColorstr='#e8c59d',GradientType=0 ); /* IE6-8 */
+    border-style:solid;
+    border-width:1px;
+    border-color:silver;
+    padding:5px;
+    clear:both; 
+   
+}
+.pecati img{
+  color: #333;
+  margin: 5px;
+  padding: 2px;
+}
+.pecati img{
+border-style: solid;
+border-width: 2px;
+border-color:#ce9452;
+}
+.pechat{
+  width:120px; 
+}
+.klient{
+  width:240px;
+}
+ #year-2006{
+  font-size: 26px;
+  font-weight: bold;
+  font-style: italic;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0;
+  color: orange;
+  margin-top: 9px;
+}
+#site-span{
+  font-size: 16px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  color: #744A29;
+
+}
+////////////////////// Такелаж и пианино
+/*Такелажные работы*/
+.tbl-prices{
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.tbl-prices th{
+	border-style: solid;
+	padding: 4px;
+background-color: #544747;
+color: white;
+border-width: 1px;
+border-color: gray;
+padding:5px;
+}
+.tbl-prices td{
+	border-style: solid;
+	padding: 4px;
+	border-width: 1px;
+	border-color: gray;	
+}
+.tbl-prices td.tbl-no-padding{
+	padding:0;
+}
+td.tbl-no-padding img{
+	display:block;
+}
+.tbl-center img{
+	margin: 0 auto;
+}
+.wrap-tbl{
+	margin: 4px;
+}
+.cell-center{
+    text-align:center;
+}
+.gray{
+	background-color: #F2EFE6; 
+}
+.gray-yellow-gorizontal{
+	background-color: #F1F2E6;
+}
+ 
+.tbl-price{
+	padding: 10px;
+	font-size: 16px;
+	text-align: center;
+}
+.price{
+	font-size: 22px;
+	color: orangered;
+	font-weight: bold;
+}
+/////////////////////////
+// Калькулятор
+
+.tblKalk{
+	float:left;
+	width:250px;
+}
+.tblKalkRight{
+	float:left;
+	margin-left: 20px;
+}
+.tblKalk {
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	 
+	float: left;
+	border-color: silver;
+	 
+}
+.tblKalk td{
+	padding: 4px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-color: silver;
+}
+.tblKalk th{
+	padding: 4px;
+	background-color: #464646;
+	color:white;
+}
+.tblKalkRight{
+	width:461px;
+	padding-left: 15px;	
+}
+.tblKalkRight td{
+	padding: 4px;
+}
+
+//////////////
+// Панели
+/*Панели*/
+/*панели */
+.paneli{
+	
+	background-color:#f2e5c6;
+}
+#panels li a.active{
+	background-color:#f2e5c6;
+	
+}
+#panels li a{
+	font-weight:bold;
+	
+}
+#panels {
+	list-style-type: none;
+	 
+	width: 996px;
+}
+#panels li {
+	float: left;
+	display: inline-block;
+}
+#panels li a {
+	padding: 10px;
+	display: block;
+	background-color: #ffc754;
+	color: black;
+	text-decoration: none;
+	color-profile: #7D4500;
+}
+.paneli {
+	background-color:#f2e5c6;
+	padding: 7px;
+	clear: both;
+	margin-top: 0;
+	width: 996px;
+}
+#panels li a.active {
+	background-color: white;
+	color: black;
+}
+.wrapper-panels {
+	padding: 5px;
+
+}
+.tbl-cena {
+	border-collapse: collapse;
+	background-color: white;
+	}
+.tbl-cena td {
+	border: 1px solid silver;
+	padding:6px;
+	
+}
+.tbl-title {
+	color: white;
+	background-color: #544747;
+	padding:6px;
+	font-weight:bold;
+}
+.tbl-bottom p {
+	text-align: left;
+}
+
+.tbl-cena img {
+	width: 120px;
+	height: 72px;
+}
+.left-align {
+	text-align: left;
+}
+.right-align {
+	text-align: right;
+}
+.center-align   {
+	text-align: center;
+}
+.justify-align {
+	text-align: justify;
+}
+/////////////////////////////////////////////////////
+.tbl-shagi img{
+	margin: 5px;
+}
+////////////////////// Документы
+.grey-streep-dashed-border{
+background: rgb(242,246,248); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
+border: silver 1px dashed;
+padding: 5px 0;
+}
+
+/*Калькуляторы*/
+
+#modal_kalk{
+       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fffef7+0,fff7b7+100 */
+background: rgb(255,254,247); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,254,247,1) 0%, rgba(255,247,183,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,254,247,1) 0%,rgba(255,247,183,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,254,247,1) 0%,rgba(255,247,183,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffef7', endColorstr='#fff7b7',GradientType=0 ); /* IE6-9 */
+font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+        
+        width:370px;
+        padding:15px;
+        border-radius:5px;
+        -o-border-radius:5px;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        border-top:1px solid yellow;
+        border-left:1px solid yellow;
+        border-bottom:1px solid gold;
+        border-right:1px solid gold;
+        display:none; 
+        position:absolute;
+		top:220px;
+		left:50%;
+        margin-top:-175px;
+        margin-left:-185px;
+		overflow:hidden;
+		z-index:10;
+    }
+    .kalk-zagolovok{
+        font-size:22px;
+    }
+    #modal_kalk table{
+        
+    }
+    #modal_kalk table td{
+        padding:3px;
+    }
+    #modal_kalk fieldset{
+        padding:10px;
+    }
+    #modal_kalk input[type="text"]{
+        float:right;
+        width:220px;
+    }
+    #modal_kalk fieldset{
+        display:block;
+        clear:both;
+    }
+    #modal_kalk legend{
+        font-weight:bold;
+    }
+    #modal_kalk select{
+        float:right;
+        width:140px;
+    }
+    #itog{
+        font-size:22px;
+        font-weight:bold;
+        display:block;
+         
+    }
+    #submit_button{
+        float:left;
+		padding:4px;
+		width:150px;
+    }
+    #close_button{
+        float:right;
+		padding:4px;
+		width:150px;
+    }
+/* Конец Калькуляторы*/
+// Модальное финал
+
+#underlay{
+	width:100%;
+	height:100%;
+	position:fixed;
+	background-color:black;
+	left:0;
+	top:0;
+	opacity:0.5;
+	z-index:9;
+	display:none;
+}
+#modal-close{
+  position:absolute;
+  width:400px;
+  height:150px;
+  left:50%;
+  top:220px;
+  margin-left:-200px;
+  margin-top:-75px;
+  background-color: white;
+  z-index: 10;
+  border-top-color:#82aee0;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-left-color:#C5DBF2;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-bottom-color:gray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-right-color:gray;
+  border-right-style: solid;
+  border-right-width: 1px;
+  display: none;
+}
+#top{
+  background-color:darkorange;
+  height: 30px;
+  position: relative;
+}
+#content-modal{
+padding:5px;
+position: relative;
+}
+#content-modal p{
+margin:10px;
+text-align:center;
+line-height: 24px;
+}
+#content-modal input{
+display:block;
+margin:0 150px 0 150px;
+width: 100px;
+padding:3px 10px 3px 10px;
+}
+
+/////////////////////////////////
+/*Новое модальное окно - вызов оценщика*/
+.modal_home{
+  width:400px;
+  	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fffef7+0,fff7b7+100 */
+	background: rgb(255,254,247); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,254,247,1) 0%, rgba(255,247,183,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,254,247,1) 0%,rgba(255,247,183,1) 100%); /* Chrome10-25,Safari5.1-6 		*/
+	background: linear-gradient(to bottom,  rgba(255,254,247,1) 0%,rgba(255,247,183,1) 100%); /* W3C, IE10+, FF16+, 		Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffef7', endColorstr='#fff7b7',GradientType=0 ); /* 	IE6-9 */
+  
+  border-top:1px solid yellow;
+        border-left:1px solid yellow;
+        border-bottom:1px solid gold;
+        border-right:1px solid gold;
+        display:none; 
+        position:absolute;
+		top:220px;
+		left:50%;
+        margin-top:-175px;
+        margin-left:-175px;
+	overflow:hidden;
+	z-index:10;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+  font-size:14px;
+  padding:15px;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  -o-border-radius:5px;
+  -khtml-border-radius:5px;
+  -ms-border-radius:5px;
+}
+.modal_home p.kalk-zagolovok{
+  font-size:22px;
+  }
+
+#right-modal-form{
+  float:right;
+}
+
+#modal_text{
+  width:340px;
+  height:150px;
+}
+#knopki-ocenschik{
+  width:100%;
+  
+}
+#knopki-ocenschik input{
+  width:130px;
+  padding:5px;
+}
+#knopki-ocenschik td{
+  padding:4px;
+  width:50%;
+  text-align:center;
+}
+.modal_home input[type="text"]{
+  width:250px;
+        margin-left:20px;
+}
+#modal_contact_form input[type="submit"]{
+  width: 150px;
+}
+.modal_home select{
+  width:155px;
+        margin-left:20px;
+}
+.modal_home p{
+  margin:10px 0 5px;
+}
+.modal_home label{
+        font-weight:bold;
+}
+#date-ocenka{
+  width:150px;
+  margin-left:20px;
+}
+/*Конец нового модального окна - вызов оценщика*/
+////////////////////////////
+/*Дачный переезд*/
+.tbl-dacha {
+	border-collapse: collapse;
+}
+.tbl-dacha img {
+	margin: 0 auto;
+	display: block;
+}
+.tbl-dacha td{
+	padding-top: 3px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border: 1px solid silver;
+	padding-bottom: 3px;
+	text-align: center;
+}
+.tbl-dacha th {
+	text-align: center;
+	background-color: #544747;
+	padding: 10px;
+	color: white;
+	font-weight: normal;
+	border: 1px solid silver;
+}
+#tbl-one-col {
+	width: 135px;
+	background-color: white;
+}
+#tbl-two-col {
+	width: 130px;
+	background-color: #F2EFE6;
+}
+#tbl-three-col {
+	width: 130px;
+	background-color: white;
+}
+#tbl-fore-col {
+	width: 130px;
+	background-color: #F2EFE6;
+}
+#tbl-five-col {
+	width: 10px;
+}
+#tbl-six-col {
+}
+#last-td-dacha {
+	text-align: left;
+	background-color: #F1F2E6;
+}
+.tbl-dacha ul{
+	list-style: none;
+}
+.tbl-dacha ul li:before{
+    content:"\2713";
+    color:darkorange;
+    font-weight:bold;
+    padding-right:5px;
+} 
+.spec-txt{
+	color: #FF5800;
+	font-size: 26px;
+	font-weight: bold;
+}
+///////////////////
+#tbl-upak{
+	width: 100%;
+}
+#documentation{
+	width: 100%;
+}
+#documentation td{
+	padding: 5px;
+}
+.uslugi{
+	padding: 7px 0;
+}
