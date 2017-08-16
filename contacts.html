@@ -29,7 +29,7 @@
     		margin: 10px 10px 10px 0;
     	}
     	.form-bg {
-			padding: 5px 15px 0 15px;
+			padding: 15px;
 			margin-top: 10px;
 			-moz-border-radius: 5px;
 			-webkit-border-radius: 5px;
@@ -71,6 +71,53 @@
   font-size: 18px;
   color: #C9302C;
 }
+#txtMessage{
+    border-radius: 5px;
+  }
+  button[type=submit]{
+    margin-right: 5px;
+  }
+  #phone-error,  #email-error, #name-error, #txtMessage-error{
+    background: linear-gradient(#555,#777);
+    color: white;
+    padding: 5px;
+    font-weight: normal;
+    border-radius:5px;
+    margin: 0 15px;
+    position: relative;
+    top: -6px;
+    white-space: nowrap;
+  }
+  #phone-error:after, #email-error:after, #name-error:after, #txtMessage-error:after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #777;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .form-group{
+    margin-bottom: 10px;
+  }
+  .modal-header{
+    background-color: #F76B0C;
+    background: linear-gradient(#FFB056, #F76B0C);
+    border-radius: 5px 5px 0 0;
+  }
+ .modal-footer{
+    background-color: #F8EDDB;
+    border-radius: 0 0 5px 5px;
+  }
+  .modal-body b{
+    color: #C9302C;
+  }
+
 </style>
   </head>
   <body>
@@ -147,43 +194,56 @@
        <div class="form-bg">
        <h3>Форма оперативной связи</h3>
        <p><span class="red-lg">*</span>Отмечены поля обязательные для заполнения.</p>
-	       <form action="mail.php" class="form" name="form" id="frm-contacts">
-	       <!-- ================== -->
-	       	<div class="form-group has-feedback">
-	       		<label for="name-field" class="control-label">Имя:<span class="red-lg">*</span><span class="errors" id="errName"></span></label>
-	       		<div class="input-group">
-	       			<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-	       			<input type="text" class="form-control" name="name" id="name-field" placeholder="Введите имя">
-	       			<span class="glyphicon form-control-feedback"></span>
-	       		</div>
-	       	</div>
-	       	<!-- ============== -->
-			<div class="form-group has-feedback">
-					<label for="phone-field" class="control-label">Телефон:<span class="red-lg">*</span><span class="errors" id="errPhone"></span></label>
-					<div class="input-group">
-						<div class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></div>
-						<input type="text" name="phone" id="phone-field" class="form-control" placeholder="8(000)000-00-00">
-						<span class="glyphicon form-control-feedback"></span>
-					</div>
-			</div>
-			<!-- ======================== -->
-			<div class="form-group has-feedback">
-				<label for="mail-field"  class="control-label">E-mail:</label>
-				<div class="input-group">
-					<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-					<input type="text" name="email" id="email-field" class="form-control" placeholder="mail@example.com">
-					<span class="glyphicon form-control-feedback"></span>
-				</div>
-			</div>
-			<!-- ====================================== -->
-			<div class="form-group">
-				<label for="message-field" class="control-label" >Текст сообщения:<span class="red-lg">*</span><span class="errors" id="errMessage"></span></label>
-				<textarea name="message" id="message-field" class="col-xs-12" rows="12"></textarea>
-			</div>
-			<!-- ============================================== -->
-			<button type="submit" name="submit" id="submit-btn" class="btn btn-warning btn-form"><span class="glyphicon glyphicon-send"></span> Отправить</button>
-			<button type="reset" name="reset" id="reset-btn" class="btn btn-danger btn-form"><span class="glyphicon glyphicon-trash"></span> Очистить</button>		
-	       </form>
+
+<form id="frm-contacts"  action="">
+       
+       <div class="form-group has-feedback">
+        <label  for="name">Имя: <span class="red-lg"> *</span></label>
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div> 
+          <input type="text" name="name" id="name" class="form-control" placeholder="Введите имя">
+          <span class="glyphicon form-control-feedback"></span>
+        </div>
+      </div>
+      
+      <div class="form-group has-feedback">
+         
+        <label class="control-label" for="phone">Телефон: <span class="red-lg"> *</span></label>
+        <div class="input-group">
+           
+          <div class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></div> 
+          <input type="text" name="phone" id="phone" class="form-control" placeholder="+7(000)000-00-00">
+          <span class="glyphicon form-control-feedback"></span>
+        </div>
+      </div>
+      
+      <div class="form-group has-heedback">
+        
+        <label class="control-label" for="email">Email:</label>
+        <div class="input-group">
+          
+          <div class="input-group-addon"><span>@</span></div> 
+          <input type="email" name="email" id="email" class="form-control" placeholder="mail@example.com">
+          <span class="glyphicon form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group has-feedback">
+        <label class="control-label" for="txtMessage">Сообщение:<span class="red-lg"> *</span></label>
+         
+          <textarea name="message" id="txtMessage" class="form-control"  rows="10"></textarea>
+          <span class="glyphicon form-control-feedback hidden-xs"></span>
+         
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-send"></span>  Отправить</button>
+          <button type="reset" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>  Очистить</button>
+        </div>
+         
+      </div>     
+</form>
+
+
 		</div> <!-- form-bg -->   
   </div> <!-- form -->
   <div class="col-sm-6 col-md-7">
@@ -247,16 +307,77 @@
 <!-- javascript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
 <!-- **** Подложка с формой ОК *****-->
-<div id="underlay"></div>
-<div id="modal-close">
-  <div id="top"></div>
-  <div id="content-modal">
-<p>Ваша заявка принята!<br>
-Мы свяжемся с Вами в ближайшее время. Спасибо! </p>
-  <input type="button" id="close" value="Закрыть"></div>
+<div class="modal fade" id="modalclose">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" data-dismiss="modal" class="close">x</button>
+         
+      </div>
+
+      <div class="modal-body bg-warning">
+       <b>Спасибо! Ваша заявка принята!</b> <br> Наш специалист свяжется с Вами в течение 15 мин. 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Закрыть</button>
+      </div>
+
+    </div>
+  </div>
 </div>
-<script src="js/contacts.js"></script>  
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/messages_ru.min.js"></script>
+<script>
+$(document).ready(function(){
+// Валидация
+$('#frm-contacts').validate({
+  rules:{
+    name:"required",
+    phone:"required",
+    message:"required",
+    email: "email"
+  },
+  errorPlacement:function(error, element){
+    error.fadeTo(0,0);
+    error.insertAfter(element.parents('.form-group').find('label'));
+    error.fadeTo(700,1);
+  },
+  highlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
+          $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+        },
+  unhighlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
+          $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+        },
+  messages: {
+    name:"Введите имя!",
+    phone: "Укажите номер телефона!",
+    message: "Введите текст сообщения",
+    email: "Введите корректный адрес!" 
+  },
+  submitHandler: function (form) {
+            data=$("#frm-contacts").serialize();
+            $("#name").val("");
+            $("#phone").val("");
+            $("#email").val("");
+            $("#txtMessage").val("");
+            $.post('php/mail.php',data, callback);
+                  function callback(){
+                    $(".form-group").removeClass('has-success');
+                    $('span').removeClass("glyphicon-ok");
+                    $("#underlay").show();
+                    $('.modal-dialog').css('margin-top',($(window).height()-$('.modal-dialog').height())/2);
+                    $("#modalclose").modal('show');
+                  }            
+        }
+});
+// Валидация закончена
+
+});
+</script>
  
 </div> <!-- wrapper -->
   </body>
