@@ -66,56 +66,11 @@
    color: #C9302C;
    font-weight: normal;
 }
-.red-lg{
-  font-weight: bold;
-  font-size: 18px;
-  color: #C9302C;
-}
 #txtMessage{
     border-radius: 5px;
   }
   button[type=submit]{
     margin-right: 5px;
-  }
-  #phone-error,  #email-error, #name-error, #txtMessage-error{
-    background: linear-gradient(#555,#777);
-    color: white;
-    padding: 5px;
-    font-weight: normal;
-    border-radius:5px;
-    margin: 0 15px;
-    position: relative;
-    top: -6px;
-    white-space: nowrap;
-  }
-  #phone-error:after, #email-error:after, #name-error:after, #txtMessage-error:after{
-    content: '';
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 10px solid #777;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .form-group{
-    margin-bottom: 10px;
-  }
-  .modal-header{
-    background-color: #F76B0C;
-    background: linear-gradient(#FFB056, #F76B0C);
-    border-radius: 5px 5px 0 0;
-  }
- .modal-footer{
-    background-color: #F8EDDB;
-    border-radius: 0 0 5px 5px;
-  }
-  .modal-body b{
-    color: #C9302C;
   }
 
 </style>
@@ -236,8 +191,8 @@
       </div>
       <div class="form-group">
         <div class="input-group">
-          <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-send"></span>  Отправить</button>
-          <button type="reset" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>  Очистить</button>
+          <button id="btn-submit" type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-send"></span>  Отправить</button>
+          <button id="btn-reset" type="reset" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>  Очистить</button>
         </div>
          
       </div>     
@@ -289,7 +244,7 @@
           Вы можете оценить и <br> заказать переезд по телефонам:<br><span class="telshrift">(495) 648-41-27</span> <br>и <span class="telshrift">(495) 969-30-84</span>
       </div>
       <div class="block col-xs-5 col-sm-4">
-       Или заказать бесплатный<br> выезд оценщика,  нажав на кнопку:<br><a href="zakaz.html"><button class="btn btn-warning">ОТПРАВИТЬ ЗАЯВКУ</button></a>
+       Или заказать бесплатный<br> выезд оценщика,  нажав на кнопку:<br><a href="contacts.html"><button class="btn btn-warning">ОТПРАВИТЬ ЗАЯВКУ</button></a>
       </div>
     </div> <!-- row -->     
   </div>  <!-- container -->
@@ -308,7 +263,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
-<!-- **** Подложка с формой ОК *****-->
+<!-- **** Форма ОК *****-->
 <div class="modal fade" id="modalclose">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -329,55 +284,7 @@
 </div>
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/messages_ru.min.js"></script>
-<script>
-$(document).ready(function(){
-// Валидация
-$('#frm-contacts').validate({
-  rules:{
-    name:"required",
-    phone:"required",
-    message:"required",
-    email: "email"
-  },
-  errorPlacement:function(error, element){
-    error.fadeTo(0,0);
-    error.insertAfter(element.parents('.form-group').find('label'));
-    error.fadeTo(700,1);
-  },
-  highlight: function ( element, errorClass, validClass ) {
-          $( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
-          $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
-        },
-  unhighlight: function ( element, errorClass, validClass ) {
-          $( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
-          $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-        },
-  messages: {
-    name:"Введите имя!",
-    phone: "Укажите номер телефона!",
-    message: "Введите текст сообщения",
-    email: "Введите корректный адрес!" 
-  },
-  submitHandler: function (form) {
-            data=$("#frm-contacts").serialize();
-            $("#name").val("");
-            $("#phone").val("");
-            $("#email").val("");
-            $("#txtMessage").val("");
-            $.post('php/mail.php',data, callback);
-                  function callback(){
-                    $(".form-group").removeClass('has-success');
-                    $('span').removeClass("glyphicon-ok");
-                    $("#underlay").show();
-                    $('.modal-dialog').css('margin-top',($(window).height()-$('.modal-dialog').height())/2);
-                    $("#modalclose").modal('show');
-                  }            
-        }
-});
-// Валидация закончена
-
-});
-</script>
+<script src="js/contacts.js"></script>
  
 </div> <!-- wrapper -->
   </body>

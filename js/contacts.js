@@ -1,53 +1,62 @@
-$(document).ready(
+$(document).ready(function(){
+// Валидация
+$('#frm-contacts').validate({
+  rules:{
+    name:"required",
+    phone:"required",
+    message:"required",
+    email: "email"
+  },
+  errorPlacement:function(error, element){
+    error.fadeTo(0,0);
+    error.insertAfter(element.parents('.form-group').find('label'));
+    error.fadeTo(700,1);
+  },
+  highlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
+          $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+        },
+  unhighlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
+          $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+        },
+  messages: {
+    name:"Введите имя!",
+    phone: "Укажите номер телефона!",
+    message: "Введите текст сообщения",
+    email: "Введите корректный адрес!" 
+  },
+  submitHandler: function (form) {
+            data=$("#frm-contacts").serialize();
+            $("#name").val("");
+            $("#phone").val("");
+            $("#email").val("");
+            $("#txtMessage").val("");
+            $.post('php/mail.php',data, callback);
+                  function callback(){
+                    $(".form-group").removeClass('has-success');
+                    $('span').removeClass("glyphicon-ok");
+                    $("#underlay").show();
+                    $('.modal-dialog').css('margin-top',($(window).height()-$('.modal-dialog').height())/2);
+                    $("#modalclose").modal('show');
+                  }            
+        }
+});
+// Валидация закончена
 
-	function(){
-			$("#frm-contacts").submit(
-			function(event){
-				event.preventDefault();
-				$(".errors").text("");
-				var valid=true;
-				var name=$("#name-field").val();
-				var phone=$("#phone-field").val();
-				var email=$("#email-field").val();
-				var message=$("#message-field").val();
-					if (name==""){
-					$("#errName").text("Введите имя!");
-					valid=false;
-				}
-				if (phone==""){
-					$("#errPhone").text("Введите номер телефона!");
-					valid=false;
-				}
-				if (message==""){
-					$("#errMessage").text("Введите текст сообщения!");
-					valid=false;
-				}
-				if (valid==false){
-					return false;
-				} // Выход из программы. Не пройдена валидация.
-				data=$("#frm-contacts").serialize();
-				$("#name-field").val("");
-				$("#phone-field").val("");
-				$("#email-field").val("");
-				$("#message-field").val("");
-				$.post('php/mail.php',data, callback);
-		}); // Конец submit
-			function callback(){
-					$("#underlay").show();
-					var y=$('body').scrollTop();
-    				$('#modal-close').css("top", y+220);
-					$("#modal-close").show();
-				}
-		$('#close').click(function(){
-		$('#modal-close').fadeOut(500);
-		$('#underlay').fadeOut(500);
-		});	
+$('#btn-reset').click(function(){
 
-		$('#reset-btn').click(function(){
-			
-		$("#errPhone").text("");
-		$("#errName").text("");
-		$("#errMessage").text("");
-	});
-	} // конец document.ready
-); 
+   $('span').removeClass('glyphicon-ok').removeClass('glyphicon-remove');
+   $('.form-group').removeClass('has-success').removeClass('has-error');
+   $('.error').remove();
+   $('#frm-contacts input').val('');
+   $('#frm-contacts textarea').val('');
+
+});
+});
+
+
+
+
+
+

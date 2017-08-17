@@ -486,7 +486,7 @@
           Вы можете оценить и <br> заказать переезд по телефонам:<br><span class="telshrift">(495) 648-41-27</span> <br>и <span class="telshrift">(495) 969-30-84</span>
       </div>
       <div class="block col-xs-5 col-sm-4">
-       Или заказать бесплатный<br> выезд оценщика,  нажав на кнопку:<br><a href="zakaz.html"><button class="btn btn-warning">ОТПРАВИТЬ ЗАЯВКУ</button></a>
+       Или заказать бесплатный<br> выезд оценщика,  нажав на кнопку:<br><a href="contacts.html"><button class="btn btn-warning">ОТПРАВИТЬ ЗАЯВКУ</button></a>
       </div>
     </div> <!-- row -->     
   </div>  <!-- container -->
@@ -511,133 +511,214 @@
     <!-- Скрипт калькулятора -->
     <script src="js/kalkForTime.js"></script>
     <!-- Скрипт. Верхней большой формы -->
-    <script type="text/javascript" src="js/contact_forms.js"></script>
+   <script src="js/jquery.validate.min.js"></script>
+      <script src="js/messages_ru.min.js"></script>
+     <script type="text/javascript" src="js/contact_forms.js"></script>
 
+<!-- Модальная форма, появляющаяся после отправки формы вверху страницы -->
+<div id="modal-double" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+<!-- modal-header =====================================     -->
+      <div class="modal-header">
+       <button   type="button" data-dismiss="modal" class="close">x</button>
+        <h4 class="modal-title">Заказ звонка</h4>
+      </div> 
+<!-- end modal-header ====================================== -->
+      <div class="modal-body bg-warning">
+          <p><span class="red-lg">*</span>Отмечены поля обязательные для заполнения.</p>
+          <form id="frm-contacts"  action="">
+       
+          <div class="form-group has-feedback">
+              <label  for="name">Имя: <span class="red-lg"> *</span></label>
+              <div class="input-group">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div> 
+                <input type="text" name="name" id="name" class="form-control" placeholder="Введите имя">
+                <span class="glyphicon form-control-feedback"></span>
+              </div>
+          </div>
+      
+          <div class="form-group has-feedback">
+              <label class="control-label" for="phone">Телефон: <span class="red-lg"> *</span></label>
+              <div class="input-group"> 
+                <div class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></div> 
+                <input type="text" name="phone" id="phone" class="form-control" placeholder="+7(000)000-00-00">
+                <span class="glyphicon form-control-feedback"></span>
+            </div>
+          </div>
+      
+          <div class="form-group has-heedback">        
+              <label class="control-label" for="email">Email:</label>
+              <div class="input-group">        
+                <div class="input-group-addon"><span>@</span></div> 
+                <input type="email" name="email" id="email" class="form-control" placeholder="mail@example.com">
+                <span class="glyphicon form-control-feedback"></span>
+            </div>
+          </div>
+ <!-- Оценка=====================================      -->
+          <div id="ocenka">
+          <h4 class="red-lg">Заявка на оценку</h4>
+          <p>Укажите тип перевозки и желаемую дату оценки:</p>  
+          <div class="form-group">
+                        <label class="control-label" for="type-perevozka">Тип перевозки:</label>
+
+                        <select class="form-control" name="type-perevozka" id="type-perevozka">
+                          <option value="Не выбрано">-- Выбрать тип --</option>  
+                          <option value="Офисный переезд">Офисный переезд</option>  
+                          <option value="Квартирный переезд">Квартирный переезд</option>
+                          <option value="Дачный переезд">Дачный переезд</option>
+                          <option value="Другое">Другое</option>
+                        </select>
+          </div>  
+
+           <div class="form-group"> 
+                      
+                      <label class="control-label" for="date-ocenka">Дата оценки:</label>   
+                      <div class="input-group">
+                          <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div> 
+                          <input class="form-control" name="date-ocenka" id="date-ocenka" type="date" />
+                      </div>
+           </div> 
+          </div>
+<!-- Конец оценка=================================== -->
+          <div class="form-group has-feedback">
+              <label class="control-label" for="txtMessage">Сообщение:<span class="red-lg"> *</span></label>           
+              <textarea name="message" id="txtMessage" class="form-control"  rows="8"></textarea>
+              <span class="glyphicon form-control-feedback hidden-xs"></span>           
+          </div>
+      </div> <!-- modal-body ====================================== -->
+<!-- modal-footer=================================================  -->
+      <div class="modal-footer">
+          
+          <div class="form-group">
+            <div class="input-group">
+              <button id="btn-submit" type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-send"></span>  Отправить</button>
+              <button id="btn-reset" type="reset" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>  Очистить</button>
+              <button id="btn-close" type="button" data-dismiss="modal" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>  Закрыть</button>
+            </div>
+          </div> 
+
+      </div>     
+</form>
+<!-- end form ========================================================== -->
+      </div> <!-- modal-content -->
+  </div> <!-- modal-dialog -->
+</div> <!-- modal -->
+<!-- ======================================= Конец блока с большой формой -->
+<div class="modal fade" id="modalclose">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" data-dismiss="modal" class="close">x</button>
+      </div>
+
+      <div class="modal-body bg-warning">
+       <b>Спасибо! Ваша заявка принята!</b> <br> Наш специалист свяжется с Вами в течение 15 мин. 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Закрыть</button>
+      </div>
+    
     </div>
-
+  </div>
+</div>
+<!-- ================================== -->
+<!--Конец верхних модальных форм -->
 <!-- ***** Калькулятор ****** -->
-<div id="modal_kalk">
-<p class="kalk-zagolovok">Рассчитать стоимость перевозки!</p>
-<hr> 
-<form id="kalk-form" name="kalk-form" action="php/mailkalk.php" method="post" >
-    <table>
-        <tr>
-            <td>Имя:</td><td><input type="text" id="kalk_contact_name" name="kalk_contact_name" /></td>
-        </tr>
-        <tr>
-            <td>Телефон:</td><td><input type="text" id="kalk_contact_phone" name="kalk_contact_phone" /></td>
-        </tr>
-        <tr>
-            <td>E-mail:</td><td><input type="text" id="kalk_contact_mail" name="kalk_contact_mail" /></td>
-        </tr>
-    </table>
-<fieldset><legend>Укажите параметры:</legend>
-<table>
-        <tr>
-            <td>Тип автомобиля:</td><td><select name="select_auto" id="select_auto">
-                    <option value="10">Газель 10 куб.м</option>
-                    <option value="19">Газель 19 куб.м</option>
-                      </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Количество грузчиков:</td><td><select name="select_gruzchik" id="select_gruzchik">
-                              <option value="2">2</option>
+<div id="modal_kalk" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h4>Рассчитать стоимость перевозки!</h4>
+      </div>
+      <div class="modal-body bg-warning">
+        
+          <form id="kalk-form" name="kalk-form" action="">
+                  
+                        <div class="form-group has-feedback">
+                            <label  for="kalkname">Имя: <span class="red-lg"> *</span></label>
+                            <div class="input-group">
+                              <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div> 
+                              <input type="text" name="kalkname" id="kalkname" class="form-control" placeholder="Введите имя">
+                              <span class="glyphicon form-control-feedback"></span>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group has-feedback">
+                            <label class="control-label" for="kalkphone">Телефон: <span class="red-lg"> *</span></label>
+                            <div class="input-group"> 
+                              <div class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></div> 
+                              <input type="text" name="kalkphone" id="kalkphone" class="form-control" placeholder="+7(000)000-00-00">
+                              <span class="glyphicon form-control-feedback"></span>
+                          </div>
+                        </div>
+                    
+                        <div class="form-group has-heedback">        
+                            <label class="control-label" for="kalkemail">Email:</label>
+                            <div class="input-group">        
+                              <div class="input-group-addon"><span>@</span></div> 
+                              <input type="email" name="kalkemail" id="kalkemail" class="form-control" placeholder="mail@example.com">
+                              <span class="glyphicon form-control-feedback"></span>
+                          </div>
+                        </div>
+
+                         <h4>Укажите параметры:</h4>
+                         <div class="form-group">
+                           <label for="select_auto">Тип автомобиля:</label>  
+                                        <select class="form-control" name="select_auto" id="select_auto">
+                                                <option value="10">Газель 10 куб.м</option>
+                                                <option value="19">Газель 19 куб.м</option>
+                                         </select>
+                         </div> <!-- form-group -->
+                              
+                         <div class="form-group">
+                            <label for="select_gruzchik">Количество грузчиков:</label>
+                                          <select class="form-control" name="select_gruzchik" id="select_gruzchik">
+                                                <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 <option value="4">4</option>
                                                 <option value="5">5</option>
                                                 <option value="6">6</option>
-                        </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Количество часов:</td><td> <select name="select_chas" id="select_chas">
-                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                       </select>
-            </td>
-        </tr>
-    </table>
-</fieldset>
-<label name="itog" id="itog">Стоимость  перевозки: 3900 руб.</label>
-<input type="hidden" id="hidden_pole" name="hidden_pole" value=""/><table>
-<tr>
-<td><input type="submit" name="submit_button" id="submit_button" value="Подтвердить цену" /></td>
-<td><input type="button" name="close_button" id="close_button" value="Закрыть"/></td>
-</tr>       
-</table>
-</form>
-</div>
+                                          </select>
+                         </div> <!-- form-group -->    
 
-<!-- Конец. Калькулятор --><!-- InstanceEndEditable -->
+                             
+                          <div class="form-group">    
+                              <label for="select_chas">Количество часов:</label> 
+                                        <select class="form-control" name="select_chas" id="select_chas">
+                                              <option value="3">3</option>
+                                              <option value="4">4</option>
+                                              <option value="5">5</option>
+                                              <option value="6">6</option>
+                                              <option value="7">7</option>
+                                              <option value="8">8</option>
+                                              <option value="9">9</option>
+                                              <option value="10">10</option>
+                                         </select>
+                        </div> <!-- form-group -->    
+                          <hr>
+                        <label class="red-lg" name="itog" id="itog">Стоимость  перевозки: 3900 руб.</label>
+                        <input type="hidden" id="hidden_pole" name="hidden_pole" value=""/>
+                        <input type="hidden" id="hidden_pole" name="hidden_type" value="Квартирный переезд"/>
+          </div>  
 
+          <div class="modal-footer">
+          <div class="form-group">
+            <div class="input-group">
+              <button id="btn-submit" type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-send"></span>  Отправить</button>
+              <button id="btn-close" type="button" data-dismiss="modal" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>  Закрыть</button>
+            </div>
+          </div> 
+          </div> <!-- modal-footer -->
 
-<!-- Модальная форма, появляющаяся после отправки формы вверху страницы -->
-<div class="modal_home">
-<p class="kalk-zagolovok">Вызвать оценщика бесплатно!</p>
-<hr>  
-    <form id="modal_contact_form" name="modal_contact_form" action="php/mailocenka.php" method="post">
-        <p>Проверьте правильность заполнения данных:</p>    
-         <table>
-              <tr>
-              <td><label>Имя:</label></td>
-                <td><input id="modal_contact_name" name="modal_contact_name" type="text" value="" />
-                </td>
-              </tr>
-              <tr>
-              <td><label>Телефон:</label></td>
-                <td><input id="modal_contact_phone" name="modal_contact_phone" type="text" value="" />
-                </td>
-              </tr>
-              <tr>
-              <td><label>E-mail:</label></td>
-                <td><input id="modal_contact_mail" name="modal_contact_mail" type="text" value="" />
-                </td>
-              </tr>
-           </table>
-      <p>Укажите тип перевозки и желаемую дату оценки:</p>  
-      <table>
-        <tr>
-        <td><label>Тип перевозки:</label></td>
-          <td>
-            <select name="type-perevozka" id="type-perevozka">
-              <option value="Офисный переезд">Офисный переезд</option>  
-              <option value="Квартирный переезд">Квартирный переезд</option>
-              <option value="Дачный переезд">Дачный переезд</option>
-              <option value="Другое">Другое</option>
-              </select>
-          </td>
-        </tr>
-        <tr>
-          <td><label>Дата оценки:</label></td><td><input name="date-ocenka" id="date-ocenka" type="date" /></td>
-        </tr>
-      </table>
-     <p>Дополнительная информация:</p> 
-     <textarea id="modal_text" name="modal_text"></textarea><br />
-     <table id="knopki-ocenschik">
-     <tr>
-     <td><input type="submit" value="Отправить заявку"></td>
-     <td><input type="button" id="close-button" value="Закрыть"></td>
-     </tr>
-     </table>
-   </form>
-  </div>
-<!-- **** Подложка с формой ОК *****-->
-<div id="underlay"></div>
-<div id="modal-close">
-  <div id="top"></div>
-  <div id="content-modal">
-<p>Ваша заявка принята!<br>
-Мы свяжемся с Вами в ближайшее время. Спасибо! </p>
-  <input type="button" id="close" value="Закрыть"></div>
-</div>
-<!--Конец. Верхняя большая форма -->
-
+          </form>
+      
+    </div> <!-- modal-content -->
+  </div> <!-- modal-dialog -->
+</div> <!-- modal -->
+<!-- ======================= калькулятор -->
+    </div>
   </body>
 </html>

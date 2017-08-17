@@ -3,53 +3,80 @@ $(document).ready(function(){
 /*предварительная отправка формы*/	
 $('#contact_form').submit(function(e){
 	e.preventDefault();
-	var cname=$('#contact_name').val();
-	var cphone=$('#contact_phone').val();
-	var cocenka=$('#check_ocenka').val();
-	if((cphone!="")&(cname!="")){
+	if($('#check_ocenka').prop("checked")){
+		$('#ocenka').show();
+	}else $('#ocenka').hide();
+	
+	if(($('#contact_name').val()!='')&&($('#contact_phone').val()!="")){
 		var data=$('#contact_form').serialize();
-		$.post('php/mailhome.php', data, function(){
-		$('#contact_phone').val("");
-		$('#contact_mail').val("");
-		$('#modal_contact_name').val(cname);
-		$('#modal_contact_phone').val(cphone);
+		$.post('php/mail.php', data);
 
-		var y=$('body').scrollTop();
-    	$('.modal_home').css("top", y+220);
+    var cname=$('#contact_name').val();
+    var cphone=$('#contact_phone').val();
+    
+    $('#contact_name').val("");
+    $('#contact_phone').val("");
 
-		$('.modal_home').fadeIn(500);
-		$('#underlay').fadeTo(500,0.7);
-		$('#underlay').fadeIn(500);
-		 
-		});
-	} else{
-		var y=$('body').scrollTop();
-    	$('.modal_home').css("top", y+220);
-		$('.modal_home').fadeIn(500);
-		$('#underlay').fadeTo(500,0.7);
-		$('#underlay').fadeIn(500);
-		 
+    $('#modal-double #name').val(cname);
+    $('#modal-double #phone').val(cphone);
+
+		$('#modal-double').modal('show');	
+	}else{
+		$('#modal-double').modal('show');
 	}
 });
-	$('#modal_contact_form').submit(function(){
-		var data=$('#modal_contact_form').serialize();
-		$.post('php/mailocenka.php',data, function(){
-			$('.modal_home').fadeOut(500);
-			
-			var y=$('body').scrollTop();
-            $('#modal-close').css("top", y+220);
+// отправка второй формы ==========================
+// Валидация
+$('#frm-contacts').validate({
+  rules:{
+    name:"required",
+    phone:"required",
+    message:"required",
+    email: "email"
+  },
+  errorPlacement:function(error, element){
+    error.fadeTo(0,0);
+    error.insertAfter(element.parents('.form-group').find('label'));
+    error.fadeTo(700,1);
+  },
+  highlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
+          $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+        },
+  unhighlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
+          $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+        },
+  messages: {
+    name:"Введите имя!",
+    phone: "Укажите номер телефона!",
+    message: "Введите текст сообщения",
+    email: "Введите корректный адрес!" 
+  },
+  submitHandler: function (form) {
+            data=$("#frm-contacts").serialize();
+            $("#name").val("");
+            $("#phone").val("");
+            $("#email").val("");
+            $("#txtMessage").val("");
+            $.post('php/mail.php', data);
+                   
+                    $(".form-group").removeClass('has-success');
+                    $('span').removeClass("glyphicon-ok");
+                    $('#modal-double').modal('hide');
+                    $("#modalclose").modal('show');
+                           
+        }
+});
+// Валидация закончена
 
-			$('#modal-close').fadeIn(500);	
-			});
-			return false;
-		});
-	$('#close').click(function(){
-		$('#modal-close').fadeOut(500);
-		$('#underlay').fadeOut(500);
-		});	
-	$('#close-button').click(function(){
-		$('.modal_home').fadeOut(500);
-		$('#underlay').fadeOut(500);
-		});
-	
+$('#btn-reset').click(function(){
+
+   $('span').removeClass('glyphicon-ok').removeClass('glyphicon-remove');
+   $('.form-group').removeClass('has-success').removeClass('has-error');
+   $('.error').remove();
+   $('#frm-contacts input').val('');
+   $('#frm-contacts textarea').val('');
+
+});
 });

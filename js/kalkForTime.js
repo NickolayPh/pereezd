@@ -1,26 +1,22 @@
   $(document).ready(function(){
 /* Кнопка рассчитать для авто 10 куб.м */
 $('.kalk-10').click(function(){
-  var y=$('body').scrollTop();
-  $('#modal_kalk').css("top", y+220);
-  $('#modal_kalk').fadeIn(500);
-  $('#underlay').fadeTo(500,0.5);
-  $('#underlay').fadeIn(500);
-  $("#select_auto").val("10");
-  $("#select_chas").val("3");
-  $("#select_gruzchik").val("2");
-  $("#hidden_pole").val("3900");
-  $("#itog").html("Стоимость = 3900 руб.");
-  return false;
+   
+  $('#modal_kalk').modal('show');
+  
+$("#select_auto").val("10");
+$("#select_chas").val("3");
+$("#select_gruzchik").val("2");
+$("#hidden_pole").val("3900");
+$("#itog").html("Стоимость = 3900 руб.");
+ return false;
 });
+
 /* Кнопка рассчитать для авто 19 куб.м */
 $('.kalk-19').click(function(){
-   var y=$('body').scrollTop();
-  $('#modal_kalk').css("top", y+220);
 
-  $('#modal_kalk').fadeIn(500);
-  $('#underlay').fadeTo(500,0.5);
-  $('#underlay').fadeIn(500);
+$('#modal_kalk').modal('show');
+
   $("#select_auto").val("19");
   $("#select_chas").val("4");
   $("#select_gruzchik").val("2");
@@ -28,25 +24,7 @@ $('.kalk-19').click(function(){
   $("#itog").html("Стоимость = 5600 руб.");
   return false;
 });
-/* Кнопка закрыть в окне калькулятора */
-$('#close_button').click(function(){
-  $('#modal_kalk').fadeOut(500);
-  $('#underlay').fadeOut(500);  
-  return false;
-});
-/* Кнопка подтвердить цену в окне калькулятора*/
-$('#kalk-form').submit(function(){
-    var data=$('#kalk-form').serialize();
-    $.post('php/mailkalk.php', data, function(){
-    $('#modal_kalk').fadeOut(500);
 
-    var y=$('body').scrollTop();
-    $('#modal-close').css("top", y+220);
-
-    $('#modal-close').fadeIn(500);
-    });
-  return false; 
-});
 /* Выбор грузовика */
 $('#select_auto').change(function(){
    var minzakaz=3900;
@@ -120,4 +98,47 @@ $('#select_gruzchik').change(function(){
    str='Стоимость = '+stoimost+'руб.';
    $('#itog').html(str);
 });
+// =========================
+$('#kalk-form').validate({
+  rules:{
+    kalkname:"required",
+    kalkphone:"required",
+    kalkemail: "email"
+  },
+  errorPlacement:function(error, element){
+    error.fadeTo(0,0);
+    error.insertAfter(element.parents('.form-group').find('label'));
+    error.fadeTo(700,1);
+  },
+  highlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
+          $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+        },
+  unhighlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
+          $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+        },
+  messages: {
+    kalkname:"Введите имя!",
+    kalkphone: "Укажите номер телефона!",
+    kalkemail: "Введите корректный адрес!" 
+  },
+  submitHandler: function (form) {
+            data=$("#kalk-form").serialize();
+            $("#kalkname").val("");
+            $("#kalkphone").val("");
+            $("#kalkemail").val("");
+            $(".form-group").removeClass('has-success');
+            $('span').removeClass("glyphicon-ok");
+            $.post('php/mailkalk.php',data, callback);
+                  function callback(){
+                    $('#modal_kalk').modal('hide');
+                    $('#modalclose .modal-dialog').css('margin-top',($(window).height()-$('#modal_kalk .modal-dialog').height())/2);
+                    $("#modalclose").modal('show');
+                  }            
+        }
+});
+// Валидация закончена
+
+// ====================
 }); 
