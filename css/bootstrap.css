@@ -6728,11 +6728,30 @@ body {
   display: inline-block;
   min-width: 100%;
 }
+.navbar {
+  border-radius: 0;
+}
 .navbar a {
   font-size: 16px;
 }
 .btn-warning {
   background: linear-gradient(to bottom, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #f46213 100%);
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffc578+0,fb9d23+100;Orange+3D+%233 */
+  background: #ffc578;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffc578 0%, #fb9d23 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffc578 0%, #fb9d23 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffc578 0%, #fb9d23 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc578', endColorstr='#fb9d23', GradientType=0);
+  /* IE6-9 */
+  line-height: 35px;
 }
 .panel-title {
   color: white;
