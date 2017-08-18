@@ -3,6 +3,13 @@ $(document).ready(function(){
 /*предварительная отправка формы*/	
 $('#contact_form').submit(function(e){
 	e.preventDefault();
+
+  $('span').removeClass('glyphicon-ok').removeClass('glyphicon-remove');
+   $('.form-group').removeClass('has-success').removeClass('has-error');
+   $('.error').remove();
+   $('#frm-contacts input').val('');
+   $('#frm-contacts textarea').val('');
+   
 	if($('#check_ocenka').prop("checked")){
 		$('#ocenka').show();
 	}else $('#ocenka').hide();
